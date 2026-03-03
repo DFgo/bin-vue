@@ -1,0 +1,188 @@
+
+/* Global Styles from previous React App.css */
+:root {
+  --primary-color: #1890ff;
+  --bg-dark: #001529;
+  --bg-gradient-start: #0a1929;
+  --bg-gradient-end: #0d1b2a;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  color: #ffffff;
+  font-family: 'Microsoft YaHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+body::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 10% 20%, rgba(30, 136, 229, 0.1) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(2, 136, 209, 0.1) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: -1;
+}
+#app { height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px;
+}
+::-webkit-scrollbar-track { background: rgba(10, 25, 41, 0.5);
+}
+::-webkit-scrollbar-thumb { background: rgba(30, 136, 229, 0.5); border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: #1e88e5;
+}
+
+/* Bin Item Card */
+.bin-item {
+  height: 90px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border: 2px solid transparent;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+.bin-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: inherit;
+  opacity: 0.3;
+  z-index: 1;
+}
+.bin-item:hover { 
+  transform: translateY(-4px) scale(1.03); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); 
+  border-color: rgba(30, 136, 229, 0.5); 
+  z-index: 10;
+}
+.bin-item-content { position: relative; z-index: 2; text-align: center; width: 100%;
+}
+.bin-status-empty { background: linear-gradient(135deg, #2d3748, #4a5568); border: none;
+}
+.bin-status-low { background: linear-gradient(135deg, #38a169, #68d391); border: none;
+}
+.bin-status-medium { background: linear-gradient(135deg, #ecc94b, #faf089); border: none; color: #333;
+}
+.bin-status-high { background: linear-gradient(135deg, #e53e3e, #fc8181); border: none;
+}   
+
+/* Glassmorphism Classes */
+.glass-sider { 
+  background: rgba(10, 25, 41, 0.8) !important; 
+  border-right: 1px solid rgba(30, 136, 229, 0.3); 
+  border-left: 1px solid rgba(30, 136, 229, 0.3); 
+  backdrop-filter: blur(10px);
+}
+.glass-header { 
+  background: rgba(10, 25, 41, 0.8) !important; 
+  border-bottom: 1px solid rgba(30, 136, 229, 0.3); 
+  padding: 0 20px !important; /* Force padding override */
+  height: 60px; 
+  line-height: 60px; 
+  backdrop-filter: blur(10px);
+}
+.glass-card { 
+  background: rgba(10, 25, 41, 0.6) !important; 
+  border: 1px solid rgba(30, 136, 229, 0.3) !important; 
+  border-radius: 10px !important;
+}
+.glass-card .ant-card-head { 
+  border-bottom: 1px solid rgba(30, 136, 229, 0.3) !important; 
+  min-height: 45px; 
+  padding: 0 15px !important;
+}
+.glass-card .ant-card-head-title { 
+  padding: 12px 0 !important; 
+  color: #ffffff !important; 
+  font-size: 15px; 
+  font-weight: 600;
+}
+
+/* Stat Cards */
+.stat-card .ant-statistic-title { font-size: 13px; margin-bottom: 4px; color: #a0c4ff; text-align: center;
+}
+.stat-card .ant-statistic-content { text-align: center;
+}
+.stat-card .ant-statistic-content-value { font-size: 24px; font-weight: 700; color: #fff;
+}
+
+/* AntD Overrides */
+.ant-input, .ant-select-selector, .ant-input-number, .ant-btn-dashed {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(30, 136, 229, 0.3) !important;
+  color: #fff !important;
+}
+.ant-select-selection-item { color: #fff !important;
+}
+.ant-select-arrow { color: #a0c4ff !important;
+}
+
+.toolbar[data-v-c0bb848a] {
+  z-index: 100;
+  background: rgba(0, 21, 41, 0.8);
+  backdrop-filter: blur(4px);
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: row-reverse;
+}
+
+/* 表头居中 */
+[data-v-4d919598] .ant-table-thead > tr > th {
+  background: rgba(0, 0, 0, 0.2);
+  color: #a0c4ff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center !important;
+}
+
+/* 自定义表格滚动条样式 */
+[data-v-4d919598] .ant-table-body::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+[data-v-4d919598] .ant-table-body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+[data-v-4d919598] .ant-table-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+[data-v-4d919598] .ant-table-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* 表格透明背景 */
+[data-v-4d919598] .ant-table {
+  background: transparent;
+  color: #fff;
+}
+[data-v-4d919598] .ant-table-thead > tr > th {
+  background: rgba(0, 0, 0, 0.2);
+  color: #a0c4ff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+[data-v-4d919598] .ant-table-tbody > tr > td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+[data-v-4d919598] .ant-table-tbody > tr:hover > td {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+[data-v-4d919598] .ant-empty-description {
+  color: rgba(255, 255, 255, 0.45);
+}
