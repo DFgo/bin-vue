@@ -12,6 +12,10 @@ node_modules
 dist-ssr
 *.local
 
+# Backup files
+backups
+*.zip
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
