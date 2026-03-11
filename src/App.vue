@@ -10,7 +10,7 @@
         <div style="display: flex; align-items: center">
           <div style="color: #fff; font-size: 16px; font-weight: 600; display: flex; align-items: center; margin-right: 40px">
             <img src="./assets/logo.svg" alt="Logo" style="height: 32px; margin-right: 12px" />
-            <span style="font-size: 16px; font-weight: 600">仓储BIN位看板</span>
+            <span style="font-size: 16px; font-weight: 600">中心仓库BIN位数字看板</span>
           </div>
           <a-menu 
             v-model:selectedKeys="current" 
